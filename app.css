@@ -1,0 +1,213 @@
+body {
+	font-family: 'Montserrat', sans-serif;
+	background-color: rgba(0, 0, 0, 0.02);
+	margin:0;
+}
+#container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#container * {
+	margin: 10px;
+}
+
+.card {
+	height: auto;
+	width: auto;
+	padding: 12px;
+	border: 1px solid black;
+}
+
+#notes {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#label {
+	background-color: rgb(129, 127, 255);
+	display: flex;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	height: 100px;
+	font-size: 60px;
+	margin-left: 0;
+	width: 100vw;
+}
+
+#buttons {
+	display: flex;
+}
+
+input[type="text"] {
+	outline: none;
+	font-size: 1.1rem;
+	border: none;
+	padding: 0.2em;
+	padding-bottom: 0;
+	border-bottom: 1px solid rgb(219, 216, 210);
+}
+
+input[type="text"]:focus {
+	transition: 0.4s;
+	border-bottom: 0.1em solid rgb(210, 82, 214);
+}
+
+textarea {
+	padding: 0.5em;
+	outline: none;
+	font-size: 1.5rem;
+	border-radius: 0.2em;
+	border: 0.1em solid rgb(120, 21, 145);
+	margin: 0.5em;
+}
+
+textarea:focus {
+	transition: 0.2s;
+	box-shadow: 0.2em 0.2em rgb(184, 184, 183);
+} 
+
+button {
+	outline: none;
+	border: none;
+	background-color: black;
+	color: white;
+	padding: 0.8em;
+	border-radius: 0.5em;
+}
+
+button:hover {
+	cursor: pointer;
+	transition: 0.3s;
+	box-shadow: 0.1em 0.1em rgb(165, 165, 161);
+}
+
+#notes div {
+	margin: 0.5em;
+	background-color: white;
+	border-radius: 0.3em;
+	border: 0.01em solid rgb(218, 213, 213);
+	box-shadow: 0.3em 0.3em rgb(212, 207, 209);
+}
+
+#notes div:hover {
+	transition: 0.4s;
+	background-color: rgb(250, 250, 250);
+}
+
+#notes div h4 {
+	font-size: 1.3em;
+	padding-bottom: 0.5em;
+	border-bottom: 0.3em solid rgb(247, 112, 179);
+}
+
+#notes div h6 {
+	font-size: 1em;
+}
+
+#notes div p {
+	font-size: 1.2em;
+}
+
+/* css for popup box */
+.popup .overlay {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.4);
+	z-index: 1;
+	display: none;
+}
+.popup .content {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	color: black;
+	transform: translate(-50%, -50%) scale(0);
+	background: #fff;
+	z-index: 2;
+	text-align: center;
+	padding: 1.6em;
+	box-sizing: border-box;
+	font-size: 1.1em;
+	border-radius: 0.8em;
+}
+
+.popup.active .overlay {
+	display: block;
+}
+.popup.active .content {
+	transition: all 350ms ease-in-out;
+	transform: translate(-50%, -50%) scale(1);
+}
+.popup button {
+	margin-top: 20px;
+	border-radius: 4em;
+	cursor: pointer;
+	color: white;
+	background-color: black;
+	height: 5em;
+	padding:0;
+	width: 30%;
+	margin:0.2em;
+	outline: none;
+}
+
+/* for mobile devices */
+
+@media screen and (max-width: 580px) {
+	textarea {
+		height: 12em;
+		width: 20em;
+	}
+
+	#label {
+		font-size: 2.7em;
+	}
+}
+@media screen and (max-width: 350px) {
+	textarea {
+		height: 15em;
+		width: 10em;
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.popup button {
+		margin-top: 10px;
+		border-radius: 2em;
+		height: 5em;
+		width: 40%;
+	}
+
+	.popup .content {
+		top: 50%;
+		left: 50%;
+		padding: 1.6em;
+		font-size: 0.9em;
+		border-radius: 0.8em;
+	}
+}
+
+@media screen and (max-width:500px){
+	.popup button {
+		margin-top: 8px;
+		border-radius: 2em;
+		height: 4em;
+		width: 70%;
+	}
+
+	.popup .content{
+		font-size: 0.7em;
+	}
+
+	textarea {
+		height: 10em;
+		width: 14em;
+	}
+}
